@@ -1,0 +1,20 @@
+﻿@model EmguCVMvcApp.Models.ImageProcessingModel
+
+@{
+    ViewData["Title"] = "ProcessImage";
+}
+
+<h1>ProcessImage</h1>
+
+<h4>ImageProcessingModel</h4>
+
+<form asp-action="ProcessImage" method="post" enctype="multipart/form-data">
+    <input type="file" name="uploadImage" />
+    <button type="submit">Upload Image</button>
+</form>
+
+@if (ViewBag.ProcessedImagePath != null)
+{
+    <h3>Processed Image:</h3>
+    <img src="@ViewBag.ProcessedImagePath" alt="Processed Image" />
+}
